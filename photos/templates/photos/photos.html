@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zdjecia</title>
+    <link rel="stylesheet" type="text/css" href="{% static "photos/css/manage.css" %}" />
+    <script src="{% static 'photos/js/jquery-3.3.1.min.js' %}"></script>
+</head>
+<body>
+<div id="main">
+    <div id="pics">
+        <img src="/media/{{obj.photer.main}}" id='img1'>
+        <div id="content1" class='cont'>
+            <h1>Wesele Asi i Karola</h2>
+            <h4>ZDJĘCIA</h3>
+            <p id='desc'>{{obj.description}}</p>
+            <input type="email" id="email" value="wpisz swój e-mail">
+            <a id="button" href="{{thanks_link}}">Wyślij</a>
+            <div id="link">
+                <p id='desc'>lub</p>
+                <a id='a_link' href="{{obj.link}}">pobierz zdjęcia bezpośrednio na to urządzenie.</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let link = "{{btt_link}}";
+    let csrf = "{{ csrf_token }}";
+    let name = "{{obj.name}}";
+</script>
+<script src="{% static 'photos/js/manage.js' %}"></script>
+</body>
+</html>

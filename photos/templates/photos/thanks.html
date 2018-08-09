@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pl">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static "photos/css/manage.css" %}" />
+    <meta charset="UTF-8">
+    <title>Dzięki</title>
+</head>
+<body>
+<div id="main">
+    <div id="pics">
+        <img src="/media/{{obj.photer.thigh}}" id='img4'>
+        <div id="content">
+            <h2>Dziękujemy</h2>
+            <h3>zdjęcia zostały wysłane na wskazany e-mail</h3>
+            <p>
+                Jeżeli wiadomość nie została wysłana spróbuj ponownie, lub skontaktuj się ze mną
+                <a href="mailto:sliwkakarol@gmail.com">sliwkakarol@gmail.com</a>
+                lub zadzwoń
+                <a href="tel:512148200">512148200</a>
+            </p>
+        </div>
+        <img src="/media/{{obj.photer.tlow}}" id='img3'>
+    </div>
+</div>
+</body>
+</html>

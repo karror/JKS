@@ -1,0 +1,59 @@
+
+<head>
+    <style>
+    @font-face {
+      font-family: Arab
+      src: url(/media/arabtype.ttf);
+    }
+    @font-face {
+      font-family: Tagettes;
+      src: url(/media/tagettesMy.ttf);
+    }
+    a {
+        color: #000;
+        background: #46cd04;
+        padding: 1em;
+        margin: 2em 37% 0 37%;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 40px
+    }
+    p {
+        color: #999;
+        text-align: center;
+        font-family: Arab;
+        font-size: 20px;
+        margin: 2em 4em 4em 4em;
+    }
+    h1 {
+        color: #46cd04;
+        text-align: center;
+        font-family: Tagettes;
+        font-size: 50px;
+        margin: 1em 1em 0.5em 1em;
+    }
+    div {
+      background: #fafafa;
+      display: block;
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      height: 500px;
+      top: inherit;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    img {
+        width: 100%;
+        margin-bottom: -116%;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <img src='/media/{{obj.photer.mail}}'>
+        <h1>Dziękujemy</h1>
+        <p>{{obj.mail_text}}</p>
+        <a href="{{obj.link}}">Zdjęcia</a>
+    </div>
+</body>
