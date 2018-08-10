@@ -43,3 +43,18 @@ class Photer(models.Model):
         null=True,
         blank=True)
 
+
+class Mailer(models.Model):
+    short_description = 'mailer'
+    mail = models.CharField(
+        'mail',
+        max_length=50,
+        null=True,
+        blank=True)
+    cont = models.ForeignKey(
+        Cont,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True
+    )
+

@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^DziekujemyZaWspolnaZabawe/PobierzcieSobieZdjecia/(?P<name>(?s).*)/$', sender, name='sender'),
     url(r'^Dzieki/ZdjeciaPowinnyBycWyslane/(?P<name>(?s).*)/$', thanks, name='thanks'),
     url(r'^email/(?P<name>(?s).*)/$', mail, name='mail'),
-    url(r'^mng/$', manage, name='manage')
+    url(r'^mng/$', manage, name='manage'),
+    url(r'^qr/generate/(?P<name>(?s).*)/$', makeqr, name='makeqr')
 
 ]

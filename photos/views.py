@@ -1,5 +1,5 @@
 from django.views import generic
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from .models import *
 from django.template import RequestContext
@@ -9,6 +9,21 @@ from smtplib import SMTPRecipientsRefused
 from django.utils.html import format_html
 from django.template.loader import get_template
 from django.template import Context
+import qrcode
+import qrcode.image.svg
+
+
+def makeqr(request, name):
+    url = 'https://karror.pythonanywhere/photos/DziekujemyZaWspolnaZabawe/PobierzcieSobieZdjecia/%s/'
+    qr = qrcode.QRCode(
+        1,
+        box_size=100,
+        border=1)
+    qr.add_data(url % name)
+    qr.make(fit=True)
+    img = qr.make_image(fill_color="#46cd04", back_color="white", image_factory=qrcode.image.svg.SvgPathImage)
+    img.save('media/qr.svg')
+    return redirect('/media/qr.svg')
 
 
 def sender(request, name):
@@ -28,6 +43,7 @@ def manage(request):
     address = request.POST['mailaddress']
     name = request.POST['objname']
     obj = Cont.objects.filter(name=name)[0]
+    Mailer.objects.create(mail=address, cont=obj)
     print('WYSYŁANIE')
     template = get_template('photos/email.html')
     #context = Context({'link': obj.link})
