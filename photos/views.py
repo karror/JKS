@@ -22,7 +22,7 @@ def makeqr(request, name):
     qr.add_data(url % name)
     qr.make(fit=True)
     img = qr.make_image(fill_color="#46cd04", back_color="white", image_factory=qrcode.image.svg.SvgPathImage)
-    img.save('/media/qr.svg')
+    img.save('/home/karror/JKS/media/qr.svg')
     return redirect('/media/qr.svg')
 
 
