@@ -1,10 +1,9 @@
 
 @font-face {
-  font-family: Arab
-  src: url(/media/arabtype.ttf);
+  font-family: 'Arab';
+  src: url(http://karror.pythonanywhere.com/media/arabtype.ttf);
 }
-
 @font-face {
-  font-family: Tagettes;
-  src: url(/media/tagettesMy.ttf);
+  font-family: 'Tagettes';
+  src: url(http://karror.pythonanywhere.com/media/tagettesMy.ttf);
 }
