@@ -14,7 +14,7 @@ import qrcode.image.svg
 
 
 def makeqr(request, name):
-    url = 'https://karror.pythonanywhere/photos/DziekujemyZaWspolnaZabawe/PobierzcieSobieZdjecia/%s/'
+    url = 'https://karror.pythonanywhere.com/photos/DziekujemyZaWspolnaZabawe/PobierzcieSobieZdjecia/%s/'
     qr = qrcode.QRCode(
         1,
         box_size=100,
