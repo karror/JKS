@@ -39,7 +39,6 @@ body {
 
 #content1 {
     display: grid;
-    margin: -16% 4% 4% 4%;
 }
 
 #img1 {
@@ -119,7 +118,7 @@ p {
     color: #000;
     background: #46cd04;
     padding: 0.5em 1em 0.5em 1em;
-    margin: 1em 37% 1em 37%;
+    margin: 0 37% 0 37%;
     border-radius: 5px;
     text-decoration: none;
     font-size: 40px;

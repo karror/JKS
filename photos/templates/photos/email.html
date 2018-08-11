@@ -1,7 +1,9 @@
 
 <body>
-    <div style="background: url(http://karror.pythonanywhere.com/media/gest.png); display: block; position: relative; width: 100%; max-width: 800px; height: 500px; top: inherit; left: 50%; transform: translateX(-50%);">
-        <p style="color: #999; text-align: center; font-family: 'Nunito Sans'; font-size: 20px; margin: 1em 4em 3em 4em; padding-top:10em;">{{obj.mail_text}}</p>
-        <a style="color: #000; background: #46cd04; font-family: 'Nunito Sans'; padding: 1em; margin: 2em 37% 0 37%; border-radius: 5px; text-decoration: none; font-size: 40px" href="{{obj.link}}">Zdjęcia</a>
+    <div style="background: url(http://karror.pythonanywhere.com/media/gest.png); background-size: cover; display: block; position: relative; width: 800px; height: 500px; left: 50%; transform: translateX(-50%);">
+        <p style="color: #999; text-align: center; font-family: 'Sans'; font-size: 1.5em; margin: 0 3em 2em 3em; padding-top:25%;">{{obj.mail_text}}</p>
+        <div style="text-align: center; width: 100%;">
+            <a style="color: #000; background: #46cd04; font-family: 'Sans'; padding: 1em; margin-top: 2em; color: #fff; border-radius: 5px; text-decoration: none; font-size: 1.5em" href="{{obj.link}}">Zdjęcia</a>
+        </div>
     </div>
 </body>

@@ -9,18 +9,16 @@
 </head>
 <body>
 <div id="main">
-    <div id="pics">
-        <img src="/media/{{obj.photer.main}}" id='img1'>
+    <div id="pics" style="background: url(/media/{{obj.photer.main}})">
+        <!--<img src="/media/{{obj.photer.main}}" id='img1'>-->
         <div id="content1" class='cont'>
             <h1>Wesele Asi i Karola</h2>
             <h4>ZDJĘCIA</h4>
             <p id='desc'>{{obj.description}}</p>
             <input type="email" id="email" value="wpisz swój e-mail">
             <a id="button" href="{{thanks_link}}">Wyślij</a>
-            <div id="link">
-                <p id='desc'>lub</p>
-                <a id='a_link' href="{{obj.link}}">pobierz zdjęcia bezpośrednio na to urządzenie.</a>
-            </div>
+            <p id='desc'>lub</p>
+            <a id='button' href="{{obj.link}}">Pobierz</a>
         </div>
     </div>
 </div>
