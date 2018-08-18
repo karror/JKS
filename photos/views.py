@@ -11,6 +11,7 @@ from django.template.loader import get_template
 from django.template import Context
 import qrcode
 import qrcode.image.svg
+from datetime import datetime as dt
 
 
 def makeqr(request, name):
@@ -28,6 +29,11 @@ def makeqr(request, name):
 
 def sender(request, name):
     obj = Cont.objects.filter(name=name)[0]
+    Guesting.objects.create(
+        cont=obj,
+        ip=str(get_client_ip(request)),
+        time=dt.now()
+    )
     return render(
         request,
         'photos/photos.html',
@@ -43,7 +49,7 @@ def manage(request):
     address = request.POST['mailaddress']
     name = request.POST['objname']
     obj = Cont.objects.filter(name=name)[0]
-    Mailer.objects.create(mail=address, cont=obj)
+    Mailer.objects.create(mail=address, cont=obj, time=dt.now())
     print('WYSYŁANIE')
     template = get_template('photos/email.html')
     #context = Context({'link': obj.link})
@@ -75,3 +81,12 @@ def mail(request, name):
             'obj': obj
         }
     )
+
+
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip

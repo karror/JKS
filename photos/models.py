@@ -55,6 +55,28 @@ class Mailer(models.Model):
         Cont,
         on_delete=models.SET_NULL,
         null=True,
-        blank=True
-    )
+        blank=True)
+    time = models.DateTimeField(
+        'czas',
+        auto_now=True,
+        null=True,
+        blank=True)
 
+
+class Guesting(models.Model):
+    short_description = 'guesting'
+    cont = models.ForeignKey(
+        Cont,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True)
+    ip = models.CharField(
+        'ip',
+        max_length=100,
+        null=True,
+        blank=True)
+    time = models.DateTimeField(
+        'czas',
+        auto_now=True,
+        null=True,
+        blank=True)

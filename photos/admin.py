@@ -34,10 +34,11 @@ class ContAdmin(admin.ModelAdmin):
 class MailerAdmin(admin.ModelAdmin):
     fields = (
         'mail',
-        'cont'
+        'cont',
+        'time'
     )
-    readonly_fields = ['mail', 'name']
-    list_display = ['mail', 'name']
+    readonly_fields = ['mail', 'name', 'time']
+    list_display = ['mail', 'name', 'time']
 
     def name(self, obj):
         return obj.cont.name
@@ -45,6 +46,24 @@ class MailerAdmin(admin.ModelAdmin):
     name.allowed_tags = True
     name.short_description = 'nazwa'
 
+
+class GuestingAdmin(admin.ModelAdmin):
+    fields = (
+        'cont',
+        'ip',
+        'time'
+    )
+    readonly_fields = ['name', 'ip', 'time']
+    list_display = ['name', 'ip', 'time']
+
+    def name(self, obj):
+        return obj.cont.name
+
+    name.allowed_tags = True
+    name.short_description = 'nazwa'
+
+
 admin.site.register(Cont, ContAdmin)
 admin.site.register(Photer)
 admin.site.register(Mailer, MailerAdmin)
+admin.site.register(Guesting, GuestingAdmin)
